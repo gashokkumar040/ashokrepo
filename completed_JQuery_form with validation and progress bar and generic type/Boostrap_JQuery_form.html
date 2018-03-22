@@ -1,0 +1,156 @@
+<!-- https://jqueryvalidation.org/required-method/ -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Boostrap Validator</title>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js">//imp</script>  
+  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"><!-- imp -->
+
+  <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"> //imp</script>
+ <!--  <script src="https://code.jquery.com/jquery-1.8.3.js"></script> -->
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script> -->
+
+  <script src="JQuery_form_validation.js">//imp </script>
+
+  <script type="text/javascript">$(function () {
+        $(".btn").click(function () {
+            var password = $("#txtPassword").val();
+            var confirmPassword = $("#txtConfirmPassword").val();
+            if (password != confirmPassword) {
+                text("Passwords do not match.");
+                return false;
+            }
+            return true;
+        });
+    });
+</script>
+</head>
+
+<body style="margin-top: 5px;">
+    <div class="container" style="background-color: lightyellow">
+
+	<h1 style="text-align: center; color:#2d3f13;">Registration Form</h1><br>
+
+    <!-- Progress bar -->
+    <div class="progress-wrap " style="text-align: center; ">
+        <progress max="100" value="0" id="progress" style="width: 900px; padding: 0px auto;"></progress>
+        <div class="progress-message" id="progress-message"><!-- The form, it wants you. --></div>
+    </div><br>
+
+	<form id="contactForm" method="post" class="form-horizontal" action="submit.html">
+
+
+    <!-- First Name -->
+	<div class="form-group">
+    	<label class="col-md-3 control-label">First name (only charecters[3-10])</label>
+    	<div class="col-md-6">
+    		<input type="text" class="form-control is_char" name="is_char"  id="form-content" required="required" placeholder="First Name" />
+    	</div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="form-group">
+    	<label class="col-md-3 control-label">Last name (only charecters[3-10])</label>
+    	<div class="col-md-6">
+    		<input type="text" class="form-control is_char" name="is_char" id="form-content" required="required" placeholder="Last Name" />
+    	</div>
+    </div>
+
+	<!-- Gender -->
+    <div class="form-group">
+		<label class="control-label col-md-3">Gender</label>
+                  		
+        <div class="col-md-9" required>
+			<label class="radio-inline col-md-2"><input type="radio" id="form-content" name="is_gender" value="Male" required>Male</label>
+	        <label class="radio-inline col-md-2" ><input type="radio" id="form-content" name="is_gender" value="Female" required>Female</label>
+        </div>   		
+    </div>
+  
+    <!--   Email -->
+    <div class="form-group">
+        <label class="col-md-3 control-label">Email</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" name="is_email"  id="form-content" required placeholder="Email" />
+        </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+    	<label class="col-md-3 control-label">Password</label>
+    	<div class="col-md-6">
+    		<input type="password" class="form-control" name="is_password" id="form-content" placeholder="Password" required>
+    	</div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+        <label class="col-md-3 control-label">Confirm Password</label>
+        <div class="col-md-6">
+            <input type="password" class="form-control" name="is_confirmPassword"  id="form-content" placeholder="Varify Password">
+        </div>
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group">
+    	<label class="col-md-3 control-label">Phone no</label>
+    	<div class="col-md-6">
+    		<input type="text" class="form-control" name="is_num"  id="form-content" placeholder="Phone no" required>
+    	</div>
+    </div>
+
+    <!-- Address -->
+     <div class="form-group">
+    	<label class="col-md-3 control-label">Address</label>
+    	<div class="col-md-6">
+   		   <textarea type="text" class="form-control" name="is_char_digit" id="form-content" placeholder="Address" required></textarea>
+    	</div>
+    </div>
+
+
+    <!-- Language -->
+    <div class="form-group">
+        <label class="control-label col-md-3">Languages Known</label>
+                        
+        <div class="col-md-9" required>
+            <label class="radio-inline col-md-2" ><input type="checkbox" id="form-content" name="is_language" value="English" required>  English</label>
+            <label class="radio-inline col-md-2"><input type="checkbox" id="form-content" name="is_language" value="Telugu"> Telugu</label>
+            <label class="radio-inline col-md-2" ><input type="checkbox" id="form-content" name="is_language" value="Hindi"> Hindi</label>
+        </div>         
+    </div>
+
+    <!-- Title -->
+    <div class="form-group">
+        <label class="col-md-3 control-label">Title</label>
+        <div class="col-md-6">
+            <input type="text" class="form-control" name="is_char_digit" id="form-content" placeholder="Title" required />
+        </div>
+    </div>
+
+    <!-- Content -->
+    <div class="form-group">
+        <label class="col-md-3 control-label">Content</label>
+        <div class="col-md-6" >
+            <textarea class="form-control" name="is_char_digit" rows="5" id="form-content" placeholder="Content" required></textarea>
+        </div>
+    </div>
+
+    <!-- #messages is where the messages are placed inside -->
+   <!--  <div class="form-group">
+        <div class="col-md-9 col-md-offset-3">
+            <div id="messages"></div>
+        </div>
+    </div>
+ -->
+    <!-- Submit button -->
+    <div class="form-group">
+        <div class="col-md-9 col-md-offset-3">
+            <button type="submit" class="btn btn-default">Submit</button>
+        </div>
+    </div>
+</form>
+<script src="progree.js"></script>
+</div>
+</body>
+</html>
